@@ -13,6 +13,7 @@ Considerations:
 - Static data for each week (to calculate on a rolling basis)
 - PH/Days on leave not to be counted in total days
 - How to "refresh"/"bump" after each new week
+- Find calendar template for react
 
 ## Future Work
 - Be able to click the calendar view and select "WFH/WIO" - Defaults to WIO - Need a DB
