@@ -17,7 +17,7 @@ const nWeeksWindow = (n) => {
 
 const emptyOrRows = (rows) => {
     if (!rows) {
-        return "test";
+        return [];
     }
     return rows;
 };

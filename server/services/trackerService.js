@@ -1,18 +1,20 @@
 //* More for functions that controller will call like gettingPercentage
-//* calculations and getting 12 week window put in util
+//* static calculations and getting 12 week window put in util
 //* dates and stuff put in dateService
 const db = require("../data/db");
-const { getPHQuery } = require("../data/queries");
-const { emptyOrRows } = require("./util");
 
-const getPH = async (_) => {
-    console.log("getting PH from DB");
-    const rows = await db.query(getPHQuery);
-    const data = emptyOrRows(rows);
+const calculatePercentage = (totalWeekdays, ph, leaves, wfh) => {
+    const officialOfficeDays = totalWeekdays - ph.length - leaves.length;
+    const inOfficeDays = officialOfficeDays - wfh.length;
+    const attendance = ((inOfficeDays / officialOfficeDays) * 100).toFixed(2);
 
-    return data;
+    console.log(
+        `Percentage: ${attendance}%, Official Office Days: ${officialOfficeDays}, inOfficeDays: ${inOfficeDays}, PH Days: ${ph.length}, Leave Days: ${leaves.length}, WFH Days: ${wfh.length}`
+    );
+
+    return attendance;
 };
 
 module.exports = {
-    getPH,
+    calculatePercentage,
 };

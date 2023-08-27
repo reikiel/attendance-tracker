@@ -10,24 +10,24 @@ const trackerRouter = require("./routes/trackerRouter");
 
 app.use(express.json());
 app.use(
-  express.urlencoded({
-    extended: true,
-  })
+    express.urlencoded({
+        extended: true,
+    })
 );
 
 app.get("/", (req, res) => {
-  res.json({ message: "ok" });
+    res.json({ message: "ok" });
 });
 
-app.use("/ph", trackerRouter);
+app.use("/tracker", trackerRouter);
 
 //* Error handling middleware
 app.use((err, req, res, next) => {
-  const statusCode = err.statusCode || 500;
-  console.error(err.message, err.stack);
-  res.status(statusCode).json({ message: err.message });
+    const statusCode = err.statusCode || 500;
+    console.error(err.message, err.stack);
+    res.status(statusCode).json({ message: err.message });
 });
 
 app.listen(port, () => {
-  console.log(`App listening at http://localhost:${port}`);
+    console.log(`App listening at http://localhost:${port}`);
 });
