@@ -4,7 +4,9 @@ Todos:
 2. insert PH dates just as a date, no need time (prob: timezone stored in mysql is local but app reads as -8)
 */
 const express = require("express");
+const cors = require("cors");
 const app = express();
+app.use(cors());
 const port = 8080;
 const trackerRouter = require("./routes/trackerRouter");
 

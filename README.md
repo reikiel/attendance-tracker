@@ -7,11 +7,13 @@ Track your office attendance
 -   Connect server to local db (mysql), example script to create tables and insert data under server > data > data.sql
 -   12 weeks moving window
 -   Backend logic to calculate %
+-   Simple UI to show start, end, PH Days, Leave Days, WFH Days, Percentage
 
 ## MVP 1 -- Todos
 
--   Other utility APIs to CRUD data
--   simple UI to show one liner %
+-   Other utility APIs to CRUD data & to insert data using frontend
+-   On saturday, start calculating the current week
+-   Persistent DB connection (now its opening and closing every query)
 
 ## Future Work
 
