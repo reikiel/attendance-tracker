@@ -17,9 +17,21 @@ router.get("/ph", async (req, res, next) => {
 router.get("/", async (req, res, next) => {
     try {
         let { start, end, today, totalWeekdays } = nWeeksWindow(12);
-        const ph = await dateService.getDateRangePH(start, end);
-        const leaves = await dateService.getDateRangeLeaves(start, end);
-        const wfh = await dateService.getDateRangeWFH(start, end);
+        const ph = await dateService.getDateRange(
+            dateService.dateType.PH,
+            start,
+            end
+        );
+        const leaves = await dateService.getDateRange(
+            dateService.dateType.LEAVES,
+            start,
+            end
+        );
+        const wfh = await dateService.getDateRange(
+            dateService.dateType.WFH,
+            start,
+            end
+        );
 
         // calculate
         attendance = trackerService.calculatePercentage(
