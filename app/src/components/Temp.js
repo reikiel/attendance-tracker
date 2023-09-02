@@ -22,7 +22,7 @@ const Temp = () => {
             <p>Leave Days: {attendance.leaves_no}</p>
             <p>WFH Days: {attendance.wfh_no}</p>
             <p>
-                Percentage: <b>{attendance.attendance}</b>
+                Percentage: <b>{attendance.attendance}%</b>
             </p>
         </div>
     );
