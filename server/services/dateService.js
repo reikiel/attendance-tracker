@@ -30,7 +30,4 @@ let getDateRange = async (type, start, end) => {
 module.exports = {
     dateType,
     getDateRange,
-    getDateRangePH,
-    getDateRangeWFH,
-    getDateRangeLeaves,
 };
