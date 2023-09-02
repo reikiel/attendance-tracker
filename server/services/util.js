@@ -15,6 +15,8 @@ const nWeeksWindow = (n) => {
     return { start, end, today, totalWeekdays };
 };
 
+const getDayFromDate = (date) => moment(date).format("llll").substring(0, 3);
+
 const emptyOrRows = (rows) => {
     if (!rows) {
         return [];
@@ -24,5 +26,6 @@ const emptyOrRows = (rows) => {
 
 module.exports = {
     nWeeksWindow,
+    getDayFromDate,
     emptyOrRows,
 };

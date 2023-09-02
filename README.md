@@ -8,6 +8,7 @@ Track your office attendance
 -   12 weeks moving window
 -   Backend logic to calculate %
 -   Simple UI to show start, end, PH Days, Leave Days, WFH Days, Percentage
+-   APIs to insert dates for wfh, ph and leaves
 
 ## MVP 1 -- Todos
 

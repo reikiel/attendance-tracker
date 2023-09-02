@@ -10,10 +10,10 @@ let query = async (sql, params) => {
     await connection.end((error) => {
         if (error) {
             console.error("Error closing MySQL connection:", error);
-        } else {
-            console.log("Connection to DB closed.");
         }
     });
+    console.log("Connection to DB closed.");
+
     return results;
 };
 
